@@ -16,7 +16,7 @@
                           </div>
                       </div>
                       <div class="tab-pane fade" id="pills-profile" role="tabpanel"></div>
-                        <div class="pills-home2" id="pills-home2"></div>
+                        <div class="pills-home2"></div>
                      </div>
     </div>
 </template>

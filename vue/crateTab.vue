@@ -164,7 +164,7 @@
                           </div>
                       </div>
                       <div class="tab-pane fade" id="pills-profile" role="tabpanel">
-                        <div class="pills-home2" id="pills-home2">
+                        <div class="pills-content">
                           <div class="pillsGroup" id="time">
                             <div class="groupItem">
                               <div class="block">
