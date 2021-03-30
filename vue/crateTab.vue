@@ -53,7 +53,7 @@
                                         <option selected v-for=" (s,index) in staff">
                                           {{staff[index]}}
                                         </option>
-                                    </select>
+                                  </select>
                               </div>
                               <div class="itemGroup">
                                 <span><span class="mak"></span>共用個資檔案</span><br>

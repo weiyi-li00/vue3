@@ -11,7 +11,7 @@
                         <div class="tab-content" id="pills-tabContent2">
                           <div class="tab-pane fade show active" id="pills-home2" role="tabpanel">
                                  <div class="cArea">
-                                  <el-card class="box-card">
+                                  <el-card class="box-card1">
                                     <div slot="header" class="clearfix">
                                       <el-checkbox v-model="checked">頁面</el-checkbox>
                                       <el-button style="float: right; padding: 3px 0" type="text"></el-button>
@@ -25,7 +25,7 @@
                                     <button type="button" class="btn btn-primary">←</button>
                                  </div>
 
-                                 <el-card class="box-card">
+                                 <el-card class="box-card1">
                                     <div slot="header" class="clearfix">
                                       <el-checkbox v-model="checked">頁面</el-checkbox>
                                       <el-button style="float: right; padding: 3px 0" type="text"></el-button>
@@ -34,10 +34,14 @@
                                       <el-checkbox v-model="checked">{{ol[index]}}</el-checkbox>
                                     </div>
                                   </el-card>
-                                  </div>  
+                                  </div> 
+                              <div class="btn">
+                                  <button type="button" class="btn btn-success">儲存</button>
+  
+                                </div>     
                           </div>
                           <div class="tab-pane fade" id="pills-profile2" role="tabpanel">
-                              <div>
+                              <div class="pills-home2" id="searchArea">
                                 <div class="search">
                                     <div class="itemGroup">
                                       <p>欄位名稱</p>
@@ -46,7 +50,29 @@
                                     <div class="itemButton">
                                       <button type="button" class="btn btn-primary">新增</button>
                                     </div>
-                                  </div>
+                                </div>
+                                <div class="srchContext">
+                                  <el-card class="box-card" v-for="(card,index) in cards">
+                                      <div slot="header" class="clearfix">
+                                        <el-checkbox :type="card.checked">{{card.name}}</el-checkbox>
+                                      </div>
+                                      <div class="text-item">
+                                        <span>名稱提示:</span>
+                                        <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">{{card.value}}
+                                        <div class="cardBtn">
+                                          <button type="button" class="btn btn-secondary">修改</button>
+                                          <button type="button" class="btn btn-success">確定</button>
+                                        </div>
+                                      </div>
+                                  </el-card>
+
+                                  
+                              
+                                </div>
+                                <div class="btn">
+                                  <button type="button" class="btn btn-success">儲存</button>
+  
+                                </div>
                               </div>
                                 
                           </div>
@@ -61,40 +87,26 @@
 <script>
 export default{
     data() {
-      let bind = "";
-      const generateData = _ => {
-        const data = [];
-        const cities = ['MyActivity', 'Customer_Info', 'History', 'Ticket', 'RC','TermCode','Contact','ContactEmail (95)'];
-        const pinyin = ['MyActivity', 'Customer_Info', 'History', 'Ticket', 'RC','TermCode','Contact','ContactEmail (95)'];
-        cities.forEach((city, index) => {
-          data.push({
-            label: city,
-            key: index,
-            pinyin: pinyin[index]
-          }); 
-        });
-        return data;
-      };
       return {
-        bind,
-        data: generateData(),
-        value: [],
+        cards:[
+        {name:"Phone", checked: true, value:""},
+        {name:"CustomerID", checked: true, value:""},
+        {name:"CustomerName", checked: true, value:""},
+        {name:"Email", checked: true, value:""},
+        {name:"MemberID",checked: true, value:""}
+        ],
+        //cards:["CustomerID","CustomerName","Email","MemberID"],
+
         checked: true,
-        ol:['MyActivity', 'Customer_Info', 'History', 'Ticket', 'RC','TermCode','Contact','ContactEmail (95)'],
-        filterMethod(query, item) {
-          return item.pinyin.indexOf(query) > -1;
-        }
+        
       }
     },
+    
        
     methods: {
-      select(name){
-        this.bind = name;
-      }
+     
     },
 
 } 
 </script>
-<style scoped>
- 
-</style>
+

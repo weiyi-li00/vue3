@@ -2,6 +2,54 @@
   font-size: 17px;
 }
 
+img#move {
+  cursor: move;
+  width: 26px;
+  height: 26px;
+}
+
+.table {
+  margin-left: 45px;
+}
+
+.el-table .warning-row {
+  background: oldlace;
+}
+
+.el-table .success-row {
+  background: #f0f9eb;
+}
+
+.box-card {
+  margin-bottom: 25px;
+}
+
+.box-card .clearfix, .box-card .el-checkbox {
+  cursor: move;
+}
+
+.box-card .text-item span {
+  display: block;
+  margin: 7px 0;
+}
+
+.box-card .text-item input {
+  margin: 14px 0;
+}
+
+.box-card .text-item .cardBtn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.box-card .text-item .form-control {
+  padding: 0;
+}
+
 .pills-content {
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
@@ -143,6 +191,8 @@ span.st {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
@@ -159,6 +209,12 @@ span.st {
   -ms-flex-item-align: end;
       align-self: flex-end;
   margin: 15px 60px;
+}
+
+.itemButton button {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .tab-content {
@@ -179,6 +235,7 @@ span.st {
   width: 100%;
   background-color: #333d44;
   color: #fff;
+  margin-bottom: 30px;
 }
 
 #btn-success {
