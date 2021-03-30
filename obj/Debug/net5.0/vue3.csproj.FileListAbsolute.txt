@@ -78,3 +78,4 @@ C:\Users\tpp06651\Desktop\vue3\obj\Debug\net5.0\ref\vue3.dll
 C:\Users\tpp06651\Desktop\vue3\obj\Debug\net5.0\vue3.pdb
 C:\Users\tpp06651\Desktop\vue3\obj\Debug\net5.0\vue3.genruntimeconfig.cache
 C:\Users\tpp06651\Desktop\vue3\obj\Debug\net5.0\vue3.csproj.CopyComplete
+C:\Users\tpp06651\Desktop\vue3\obj\Debug\net5.0\Razor\Pages\tab.cshtml.g.cs

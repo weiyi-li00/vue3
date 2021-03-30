@@ -2,6 +2,58 @@
   font-size: 17px;
 }
 
+.pills-content {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.cArea {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.fiflterbtn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 0 20px;
+}
+
+.fiflterbtn button.btn-primary {
+  margin-bottom: 30px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+span.el-checkbox__label {
+  font-size: 17px;
+  margin: 6px;
+}
+
+.clearfix {
+  height: 50px;
+  border-bottom: 2px solid #d1d1d1;
+}
+
+.clearfix .el-checkbox__label {
+  font-size: 22px;
+}
+
+.el-card__body {
+  width: 280px;
+}
+
 .demonstration {
   margin-right: 10px;
 }
@@ -125,7 +177,7 @@ span.st {
   display: -ms-flexbox;
   display: flex;
   width: 100%;
-  background-color: #333232;
+  background-color: #333d44;
   color: #fff;
 }
 

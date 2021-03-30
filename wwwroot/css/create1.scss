@@ -3,7 +3,37 @@
 *{
   font-size: 17px;
 }
+.pills-content{
+  flex-direction: column;
+}
+.cArea{
+  display: flex;
+}
+.fiflterbtn{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 20px;
+    button.btn-primary{
+      margin-bottom: 30px;
+      justify-content: center;
+    }
+}
+span.el-checkbox__label{
+  font-size: 17px;
+  margin: 6px;
+}
 
+.clearfix{
+  height: 50px;
+  border-bottom: 2px solid rgb(209, 209, 209);
+  .el-checkbox__label{
+    font-size: 22px;
+  }
+}
+.el-card__body{
+  width: 280px;
+}
 .demonstration{
   margin-right: 10px;
 }
@@ -84,7 +114,7 @@ span.st{
   // border: 1px solid firebrick;
   display: flex;
   width: 100%;
-  background-color: #333232;
+  background-color: #333d44;
   color: #fff;
 
 }
