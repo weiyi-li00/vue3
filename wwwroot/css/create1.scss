@@ -3,6 +3,57 @@
 *{
   font-size: 17px;
 }
+ img#move{
+  cursor: move;
+  width: 26px;
+  height: 26px;
+ 
+}
+// button.icon-ckeck{
+//   width: 25px;
+//   height: 25px;
+//   border-radius: 50%;
+//   background-color: #60b337;
+//   border-color:#60b337 ;
+//   color: #fff;
+//   &:active,&:visited{
+//     background-color:#376420 ;
+//     border-color:#4f922d ;
+//   }
+// }
+
+.table{
+  margin-left: 45px;
+}
+.el-table .warning-row {
+  background: oldlace;
+}
+
+.el-table .success-row {
+  background: #f0f9eb;
+}
+.box-card{
+  .clearfix,.el-checkbox{
+    cursor: move;
+  }
+  margin-bottom: 25px;
+  .text-item{
+    span{
+      display: block;
+      margin: 7px 0;;
+    }
+    input{
+      margin: 14px 0;
+    }
+    .cardBtn{
+      display: flex;
+      justify-content: space-between;
+    }
+    .form-control{
+      padding: 0;
+    }
+  }
+}
 .pills-content{
   flex-direction: column;
 }
@@ -90,6 +141,7 @@ span.st{
   flex-direction: column;
     .srchContext,.card-body{
       display: flex;
+      flex-wrap: wrap;
       justify-content: space-between;
     }
 }
@@ -100,6 +152,9 @@ span.st{
   display: flex;
   align-self: flex-end;
   margin: 15px 60px;
+  button{
+    justify-content: center;
+  }
 }
 .tab-content{
   width: 1400px;
@@ -116,8 +171,10 @@ span.st{
   width: 100%;
   background-color: #333d44;
   color: #fff;
-
+  margin-bottom: 30px;
 }
+
+
 #btn-success{
   float: right;
   margin-top: 20px;
