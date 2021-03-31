@@ -3,6 +3,44 @@
 *{
   font-size: 17px;
 }
+#ul{
+  dt{
+    border:1px solid firebrick ;
+
+  }
+  display: flex;
+
+}
+table#team {
+  height: 370px;
+  
+    td{
+      border:1px solid firebrick ;
+      padding: 20px;
+      text-align: center;
+      span{
+        cursor: move;
+      }
+      div{
+        display: none;
+        img{
+          width: 18px;
+        }
+      }
+    }
+  
+} 
+  
+
+.btns{
+  display: flex;
+    justify-content: space-between;
+    width: 550px;
+
+}
+.contentA{
+  display: flex;
+}
  img#move{
   cursor: move;
   width: 26px;
@@ -21,9 +59,11 @@
 //     border-color:#4f922d ;
 //   }
 // }
-
+.el-card__body{
+  width: 565px;
+}
 .table{
-  margin-left: 45px;
+  //margin-left: 45px;
 }
 .el-table .warning-row {
   background: oldlace;
