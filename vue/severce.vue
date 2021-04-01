@@ -26,6 +26,15 @@
             </div>
             <div class="itemButton">
               <button type="button" class="btn btn-primary">新增</button>
+<el-button @click="drawer = true" type="primary" style="margin-left: 16px;">
+  点我打开
+</el-button>
+
+<el-drawer
+  title="我是标题"
+  v-model="drawer">
+  <span>我来啦!</span>
+</el-drawer>
             </div>
           </div>
         </div>
@@ -87,7 +96,8 @@
 export default {
   data() {
     return {
-      drawer: true,
+      drawer: false,
+      direction: 'rtl',
       DB: ["w08DBRD01", "w08DB001", "G5"],
       tableData: [
         {

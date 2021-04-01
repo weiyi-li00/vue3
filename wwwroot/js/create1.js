@@ -50,7 +50,9 @@ const App = {
       }
       
     },
-    
+    mounted() {
+      document.getElementById('app').style.display = '';
+    },
 
 };
   const app = Vue.createApp(App);
