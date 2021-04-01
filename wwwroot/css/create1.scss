@@ -13,24 +13,76 @@
 }
 table#team {
   height: 370px;
-  
+  #first{
+    border-top-left-radius:3px;
+    background-color:#1b1e24 ;
+    color: #fff;
+  }
+  tr{
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+    vertical-align:middle;
+    border-bottom:2px solid #9ea7af;
+    color:black;; 
+    
+    &:nth-child(2n-1){
+      background-color: #c8cfd6;
+    }
+    &:hover{
+      background-color:#9ea0b4;
+      color: #fff;
+    }
     td{
-      border:1px solid firebrick ;
+      // border:1px solid firebrick ;
       padding: 20px;
       text-align: center;
-      span{
-        cursor: move;
-      }
-      div{
-        display: none;
-        img{
-          width: 18px;
+       .button-effect{
+        display: flex;
+        // border:2px solid rgb(58, 105, 192);
+        padding: 10px;
+        // background-color: rgb(34, 84, 178);
+        text-decoration:none;
+        position: relative;
+        overflow: hidden;
+        align-items: center;
+        
+       
+        &:hover .effect2{
+          transform: translateX(0%);
+          transition:  transform  3s ease-in-out;
+          display: block;
+         font-size: 16px;
+         text-decoration:none;
         }
+        &:hover .effect1{
+          text-indent: -10px;
+          margin-right: 2px;
+          text-decoration:none;
+        }
+        
+        .effect1{
+          cursor: move;
+          text-align: center;
+          color:#1b1e24;
+          text-decoration:none;
+        }
+        a.effect2{
+          content: url(../img/dustbin.png);
+          width: 17px;
+          height: 16px;
+          margin-right: -9px;
+          background-color: rgba(#000,0.05);
+          transform: translateX(160%);
+          display: none;
+          text-decoration:none;
+        }
+        
+        
       }
     }
+  }
   
 } 
-  
+
 
 .btns{
   display: flex;

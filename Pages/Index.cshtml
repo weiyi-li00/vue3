@@ -23,13 +23,14 @@
                       <el-menu-item  v-on:click="select('crate')"><img src="./img/add-documents.png">Create</el-menu-item>
                       <el-menu-item  v-on:click="select('setting')"><img src="./img/set.png">Setting</el-menu-item>
                       <el-menu-item  v-on:click="select('severce')"><img src="./img/headphones.png">Severce</el-menu-item>
-                      <el-menu-item  v-on:click="select"><img src="./img/function.png">Function Filed</el-menu-item>
+                      <el-menu-item  v-on:click="select('filed')"><img src="./img/function.png">Function Filed</el-menu-item>
                       <el-menu-item  v-on:click="select"><img src="./img/folder (1).png">Html Folder</el-menu-item>
                   </el-menu>
                   </el-aside>
                   <cratetab v-show="trage==='crate'"></cratetab>
                   <setting v-show="trage==='setting'"></setting>
                   <severce v-show="trage==='severce'"></severce>
+                  <filed v-show="trage==='filed'"></filed>
                  
                 </el-container>
             

@@ -28,7 +28,8 @@ const App = {
         //'cratetab':httpVueLoader('../crateTab.vue')
       'cratetab': Vue.defineAsyncComponent( () => loadModule('vue/crateTab.vue', options) ),
       'setting': Vue.defineAsyncComponent( () => loadModule('vue/setting.vue', options) ),
-      'severce': Vue.defineAsyncComponent( () => loadModule('vue/severce.vue', options) )
+      'severce': Vue.defineAsyncComponent( () => loadModule('vue/severce.vue', options) ),
+      'filed': Vue.defineAsyncComponent( () => loadModule('vue/filed.vue', options) )
      },
      
      methods: {
