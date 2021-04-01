@@ -52,11 +52,14 @@ table#team {
           display: block;
          font-size: 16px;
          text-decoration:none;
+         
+         
         }
         &:hover .effect1{
           text-indent: -10px;
           margin-right: 2px;
           text-decoration:none;
+          color: #fff;
         }
         
         .effect1{
@@ -74,6 +77,7 @@ table#team {
           transform: translateX(160%);
           display: none;
           text-decoration:none;
+          
         }
         
         
