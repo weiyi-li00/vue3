@@ -15635,14 +15635,11 @@
     {
       "FilePath": "/Users/nimo/Desktop/vue3/Pages/Shared/_Layout.cshtml",
       "TargetPath": "Pages\\Shared\\_Layout.cshtml",
-<<<<<<< HEAD
       "FileKind": "mvc"
     },
     {
       "FilePath": "/Users/nimo/Desktop/vue3/Pages/tab.cshtml",
       "TargetPath": "Pages\\tab.cshtml",
-=======
->>>>>>> vian
       "FileKind": "mvc"
     }
   ],
