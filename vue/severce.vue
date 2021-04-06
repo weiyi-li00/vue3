@@ -25,66 +25,41 @@
               </select>
             </div>
             <div class="itemButton">
-              <button type="button" class="btn btn-primary">新增</button>
-<el-button @click="drawer = true" type="primary" style="margin-left: 16px;">
-  点我打开
-</el-button>
+              <el-button @click="drawer = true" type="primary" style="margin-left: 16px;">
+                新增
+              </el-button>
 
-<el-drawer
-  title="我是标题"
-  v-model="drawer">
-  <span>我来啦!</span>
-</el-drawer>
+              <el-drawer v-model="drawer">
+                <el-input placeholder="搜尋" prefix-icon="el-icon-search" v-model="input2"></el-input>
+                <el-table :data="tableData" :row-class-name="tableRowClassName">
+                  <el-table-column width="90px">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                  </el-table-column>
+                  <el-table-column prop="site" label="Site" width="110px"></el-table-column>
+                  <el-table-column prop="systype" label="SysType" width="110px"></el-table-column>
+                  <el-table-column prop="name" label="服務" width="200px"></el-table-column>
+                  
+                </el-table>
+                <button type="button" class="btn btn-primary" style="width: 63px; float: right; margin-top:20px">確定</button>
+                    
+          
+             
             </div>
           </div>
         </div>
         <div class="contentA">
-          <el-card style="width: 45%">
-            <div class="text item" style="width: 600px">
-              <el-table :data="tableData" :row-class-name="tableRowClassName">
-                <el-table-column prop="site" label="Site" width="90px"></el-table-column>
-                <el-table-column prop="systype" label="SysType" width="90px"></el-table-column>
-                <el-table-column prop="name" label="服務" width="150px"></el-table-column>
-                <el-table-column label="顯示名稱" width="200px"><input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm"></el-table-column>
-                <el-table-column label="" width="53px"><img src="vue\img\dustbin (1).png" alt="" style="width: 20px"></el-table-column>
+              <el-table :data="tableData" :row-class-name="tableRowClassName" style="width:85%; margin:0 auto;">
+                <el-table-column prop="site" label="Site" width="200px"></el-table-column>
+                <el-table-column prop="systype" label="SysType" width="200px"></el-table-column>
+                <el-table-column prop="name" label="服務" width="300px"></el-table-column>
+                <el-table-column label="顯示名稱" width="300px"><input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm"></el-table-column>
+                <el-table-column label="" width="150px"><img src="vue\img\dustbin.png" alt="" style="width: 20px"></el-table-column>
               </el-table>
-            </div>
-          </el-card>
-          <el-card style="width: 45%">
-            <div>
-             <el-input placeholder="请输入内容" prefix-icon="el-icon-search" v-model="input2"></el-input>
-              
-            </div>
-            <div class="text item" style="width: 600px">
-              <el-table :data="tableData" :row-class-name="tableRowClassName">
-                <el-table-column width="90px">
-                  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                    <label class="form-check-label" for="flexCheckDefault"></label>
-                </el-table-column>
-                <el-table-column prop="site" label="Site" width="90px"></el-table-column>
-                <el-table-column prop="systype" label="SysType" width="90px"></el-table-column>
-                <el-table-column prop="name" label="服務" width="150px"></el-table-column>
-                
-              </el-table>
-            </div>
-            <div class="btns">
-                <button type="button" class="btn btn-primary" style="width: 63px;">確定</button>
-                <button type="button" class="btn btn-secondary">返回</button>
-            </div>
-          </el-card>
         </div>
       </div>
 
       <div class="tab-pane fade" id="pills-profile3" role="tabpanel" aria-labelledby="pills-profile-tab3">
         <div class="pills-home2">
-          <!-- <div class="table">
-            <el-table :data="tableData" style="width: 98%; margin: 0 auto" :row-class-name="tableRowClassName">
-              <el-table-column label="選取" width="100"><el-button type="success" icon="el-icon-check" circle></el-button></el-table-column>
-              <el-table-column label="選取" width="100"><img src="vue\img\move.png" alt="" id="move"></el-table-column>
-              <el-table-column prop="name" label="欄位名稱" width="200"></el-table-column>
-              <el-table-column label="顯示名稱" width="200"><input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm"></el-table-column>
-            </el-table>
-          </div> -->
           425393
         </div>
       </div>
@@ -97,7 +72,6 @@ export default {
   data() {
     return {
       drawer: false,
-      direction: 'rtl',
       DB: ["w08DBRD01", "w08DB001", "G5"],
       tableData: [
         {

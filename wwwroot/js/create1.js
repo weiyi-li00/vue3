@@ -1,5 +1,4 @@
 
-// $('#cratetab2').hide();
 const options = {
   moduleCache: {
     vue: Vue
@@ -44,13 +43,13 @@ const App = {
         //     $('#cratetab2').show();
         //     break;
         // }
-      //},
+      //},頁籤的另一種寫法
       select(name){
         this.trage = name;
       }
       
     },
-    mounted() {
+    created() {
       document.getElementById('app').style.display = '';
     },
 

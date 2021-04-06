@@ -10,35 +10,117 @@
                         </ul>
                         <div class="tab-content" id="pills-tabContent2">
                           <div class="tab-pane fade show active" id="pills-home2" role="tabpanel">
-                                 <div class="cArea">
-                                  <el-card class="box-card1">
-                                    <div slot="header" class="clearfix">
-                                      <el-checkbox v-model="checked">頁面</el-checkbox>
-                                      <el-button style="float: right; padding: 3px 0" type="text"></el-button>
-                                    </div>
-                                    <div v-for="(o,index) in ol" :key="o">
-                                      <el-checkbox v-model="checked">{{ol[index]}}</el-checkbox>
-                                    </div>
-                                  </el-card>
-                                  <div class="fiflterbtn">
-                                    <button type="button" class="btn btn-primary">→</button>
-                                    <button type="button" class="btn btn-primary">←</button>
-                                 </div>
+                                <div class="pills-home2" id="searchArea">
+                                  <div class="search">
+                                      <div class="itemGroup">
+                                        <p>增加欄位</p>
+                                        <el-input placeholder="請輸入内容"></el-input>
+                                      </div>
+                                      <div class="itemButton">
+                                        <button type="button" class="btn btn-primary">新增</button>
+                                        <button type="button" class="btn btn-outline-info" style="margin-left: 150px;width: 85px;">參考</button>
+                                        <button type="button" class="btn btn-success" style="margin-left: 150px;width: 85px;">儲存</button>
+                                      </div>
+                                  </div>
+                                      <table id="team" style="table-layout: fixed;">
+                                          <tr id="first">
+                                            <td>選單</td>
+                                            <td>Agent(0)</td>
+                                            <td>UH(5)</td>
+                                            <td>OM(6)</td>
+                                            <td>SD(9)</td>
+                                            <td>P&C(10)</td>
+                                            <td>PS(11)</td>
+                                            <td>全選</td>
+                                          </tr>
+                                          
+                                          <tr>
+                                            <td>MyActivity</td>
+                                            <td><input type="checkbox" style="width15px;height:15px;"></td>
+                                            <td><input type="checkbox" style="width:15px;height:15px;"></td>
+                                            <td><input type="checkbox" style="width:15px;height:15px;"></td>
+                                            <td><input type="checkbox" style="width:15px;height:15px;"></td>
+                                            <td><input type="checkbox" style="width:15px;height:15px;"></td>
+                                            <td><input type="checkbox" style="width:15px;height:15px;"></td>
+                                            <td><input type="checkbox" style="width:15px;height:15px;"></td>
+                                          </tr>
 
-                                 <el-card class="box-card1">
-                                    <div slot="header" class="clearfix">
-                                      <el-checkbox v-model="checked">頁面</el-checkbox>
-                                      <el-button style="float: right; padding: 3px 0" type="text"></el-button>
-                                    </div>
-                                    <div v-for="(o,index) in ol" :key="o">
-                                      <el-checkbox v-model="checked">{{ol[index]}}</el-checkbox>
-                                    </div>
-                                  </el-card>
-                                  </div> 
-                              <div class="btn">
-                                  <button type="button" class="btn btn-success">儲存</button>
-  
-                                </div>     
+                                          <tr>
+                                            <td>Customer_Info</td>
+                                            <td><input type="checkbox" style="width:15px;height:15px;"></td>
+                                            <td><input type="checkbox" style="width:15px;height:15px;"></td>
+                                            <td><input type="checkbox" style="width:15px;height:15px;"></td>
+                                            <td><input type="checkbox" style="width:15px;height:15px;"></td>
+                                            <td><input type="checkbox" style="width:15px;height:15px;"></td>
+                                            <td><input type="checkbox" style="width:15px;height:15px;"></td>
+                                            <td><input type="checkbox" style="width:15px;height:15px;"></td>
+                                          </tr>
+
+                                          <tr>
+                                            <td>History</td>
+                                            <td><input type="checkbox" style="width:15px;height:15px;"></td>
+                                            <td><input type="checkbox" style="width:15px;height:15px;"></td>
+                                            <td><input type="checkbox" style="width:15px;height:15px;"></td>
+                                            <td><input type="checkbox" style="width:15px;height:15px;"></td>
+                                            <td><input type="checkbox" style="width:15px;height:15px;"></td>
+                                            <td><input type="checkbox" style="width:15px;height:15px;"></td>
+                                            <td><input type="checkbox" style="width:15px;height:15px;"></td>
+                                          </tr>
+
+                                          <tr>
+                                            <td>Ticket</td>
+                                            <td><input type="checkbox" style="width:15px;height:15px;"></td>
+                                            <td><input type="checkbox" style="width:15px;height:15px;"></td>
+                                            <td><input type="checkbox" style="width:15px;height:15px;"></td>
+                                            <td><input type="checkbox" style="width:15px;height:15px;"></td>
+                                            <td><input type="checkbox" style="width:15px;height:15px;"></td>
+                                            <td><input type="checkbox" style="width:15px;height:15px;"></td>
+                                            <td><input type="checkbox" style="width:15px;height:15px;"></td>
+                                          </tr>
+
+                                          <tr>
+                                            <td>RC</td>
+                                            <td><input type="checkbox" style="width:15px;height:15px;"></td>
+                                            <td><input type="checkbox" style="width:15px;height:15px;"></td>
+                                            <td><input type="checkbox" style="width:15px;height:15px;"></td>
+                                            <td><input type="checkbox" style="width:15px;height:15px;"></td>
+                                            <td><input type="checkbox" style="width:15px;height:15px;"></td>
+                                            <td><input type="checkbox" style="width:15px;height:15px;"></td>
+                                            <td><input type="checkbox" style="width:15px;height:15px;"></td>
+                                          </tr>
+
+                                          <tr>
+                                            <td>Termcode</td>
+                                            <td><input type="checkbox" style="width:15px;height:15px;"></td>
+                                            <td><input type="checkbox" style="width:15px;height:15px;"></td>
+                                            <td><input type="checkbox" style="width:15px;height:15px;"></td>
+                                            <td><input type="checkbox" style="width:15px;height:15px;"></td>
+                                            <td><input type="checkbox" style="width:15px;height:15px;"></td>
+                                            <td><input type="checkbox" style="width:15px;height:15px;"></td>
+                                            <td><input type="checkbox" style="width:15px;height:15px;"></td>
+                                          </tr>
+
+                                          <tr>
+                                            <td>Contact</td>
+                                            <td><input type="checkbox" style="width:15px;height:15px;"></td>
+                                            <td><input type="checkbox" style="width:15px;height:15px;"></td>
+                                            <td><input type="checkbox" style="width:15px;height:15px;"></td>
+                                            <td><input type="checkbox" style="width:15px;height:15px;"></td>
+                                            <td><input type="checkbox" style="width:15px;height:15px;"></td>
+                                            <td><input type="checkbox" style="width:15px;height:15px;"></td>
+                                            <td><input type="checkbox" style="width:15px;height:15px;"></td>
+                                          </tr>
+                                      </table>
+                                  
+                                </div>
+                                 
+
+
+
+
+
+                             
+       
                           </div>
                           <div class="tab-pane fade" id="pills-profile2" role="tabpanel">
                               <div class="pills-home2" id="searchArea">
