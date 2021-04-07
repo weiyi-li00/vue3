@@ -3,13 +3,20 @@
 *{
   font-size: 17px;
 }
-#ul{
-  dt{
-    border:1px solid firebrick ;
-
-  }
-  display: flex;
-
+.el-drawer.btt{
+  height: 40%;
+}
+#el-drawer__title{
+  margin-bottom: 10px;
+}
+#teamcode{
+    height: 30px;
+    align-self: flex-end;
+    margin: 15px 0;
+    
+}
+.itemGroup2{
+  margin: 15px 30px;
 }
 table#team {
   height: 370px;
@@ -235,11 +242,11 @@ span.st{
 #searchArea{
   display: flex;
   flex-direction: column;
-    .srchContext,.card-body{
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-    }
+}
+.srchContext,.card-body{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 .srchContext{
   margin-top: 50px;

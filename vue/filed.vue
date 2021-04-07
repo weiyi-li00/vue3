@@ -287,6 +287,10 @@
                           </div>
                       </div>
                      </div>
+                      <div class="btn">
+                          <button type="button" class="btn btn-success">儲存</button>
+  
+                      </div>
     </div>
 </template>
 <script>

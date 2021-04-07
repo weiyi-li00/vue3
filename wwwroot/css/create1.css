@@ -2,14 +2,23 @@
   font-size: 17px;
 }
 
-#ul {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+.el-drawer.btt {
+  height: 40%;
 }
 
-#ul dt {
-  border: 1px solid firebrick;
+#el-drawer__title {
+  margin-bottom: 10px;
+}
+
+#teamcode {
+  height: 30px;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+  margin: 15px 0;
+}
+
+.itemGroup2 {
+  margin: 15px 30px;
 }
 
 table#team {
@@ -295,7 +304,7 @@ span.st {
           flex-direction: column;
 }
 
-#searchArea .srchContext, #searchArea .card-body {
+.srchContext, .card-body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
