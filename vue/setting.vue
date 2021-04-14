@@ -34,84 +34,18 @@
                                             <td>全選</td>
                                           </tr>
                                           
-                                          <tr>
-                                            <td>MyActivity</td>
-                                            <td><input type="checkbox" style="width15px;height:15px;"></td>
-                                            <td><input type="checkbox" style="width:15px;height:15px;"></td>
-                                            <td><input type="checkbox" style="width:15px;height:15px;"></td>
-                                            <td><input type="checkbox" style="width:15px;height:15px;"></td>
-                                            <td><input type="checkbox" style="width:15px;height:15px;"></td>
-                                            <td><input type="checkbox" style="width:15px;height:15px;"></td>
-                                            <td><input type="checkbox" style="width:15px;height:15px;"></td>
-                                          </tr>
-
-                                          <tr>
-                                            <td>Customer_Info</td>
-                                            <td><input type="checkbox" style="width:15px;height:15px;"></td>
-                                            <td><input type="checkbox" style="width:15px;height:15px;"></td>
-                                            <td><input type="checkbox" style="width:15px;height:15px;"></td>
-                                            <td><input type="checkbox" style="width:15px;height:15px;"></td>
-                                            <td><input type="checkbox" style="width:15px;height:15px;"></td>
-                                            <td><input type="checkbox" style="width:15px;height:15px;"></td>
-                                            <td><input type="checkbox" style="width:15px;height:15px;"></td>
-                                          </tr>
-
-                                          <tr>
-                                            <td>History</td>
-                                            <td><input type="checkbox" style="width:15px;height:15px;"></td>
-                                            <td><input type="checkbox" style="width:15px;height:15px;"></td>
-                                            <td><input type="checkbox" style="width:15px;height:15px;"></td>
-                                            <td><input type="checkbox" style="width:15px;height:15px;"></td>
-                                            <td><input type="checkbox" style="width:15px;height:15px;"></td>
-                                            <td><input type="checkbox" style="width:15px;height:15px;"></td>
-                                            <td><input type="checkbox" style="width:15px;height:15px;"></td>
-                                          </tr>
-
-                                          <tr>
-                                            <td>Ticket</td>
-                                            <td><input type="checkbox" style="width:15px;height:15px;"></td>
-                                            <td><input type="checkbox" style="width:15px;height:15px;"></td>
-                                            <td><input type="checkbox" style="width:15px;height:15px;"></td>
-                                            <td><input type="checkbox" style="width:15px;height:15px;"></td>
-                                            <td><input type="checkbox" style="width:15px;height:15px;"></td>
-                                            <td><input type="checkbox" style="width:15px;height:15px;"></td>
-                                            <td><input type="checkbox" style="width:15px;height:15px;"></td>
-                                          </tr>
-
-                                          <tr>
-                                            <td>RC</td>
-                                            <td><input type="checkbox" style="width:15px;height:15px;"></td>
-                                            <td><input type="checkbox" style="width:15px;height:15px;"></td>
-                                            <td><input type="checkbox" style="width:15px;height:15px;"></td>
-                                            <td><input type="checkbox" style="width:15px;height:15px;"></td>
-                                            <td><input type="checkbox" style="width:15px;height:15px;"></td>
-                                            <td><input type="checkbox" style="width:15px;height:15px;"></td>
-                                            <td><input type="checkbox" style="width:15px;height:15px;"></td>
-                                          </tr>
-
-                                          <tr>
-                                            <td>Termcode</td>
-                                            <td><input type="checkbox" style="width:15px;height:15px;"></td>
-                                            <td><input type="checkbox" style="width:15px;height:15px;"></td>
-                                            <td><input type="checkbox" style="width:15px;height:15px;"></td>
-                                            <td><input type="checkbox" style="width:15px;height:15px;"></td>
-                                            <td><input type="checkbox" style="width:15px;height:15px;"></td>
-                                            <td><input type="checkbox" style="width:15px;height:15px;"></td>
-                                            <td><input type="checkbox" style="width:15px;height:15px;"></td>
-                                          </tr>
-
-                                          <tr>
-                                            <td>Contact</td>
-                                            <td><input type="checkbox" style="width:15px;height:15px;"></td>
-                                            <td><input type="checkbox" style="width:15px;height:15px;"></td>
-                                            <td><input type="checkbox" style="width:15px;height:15px;"></td>
-                                            <td><input type="checkbox" style="width:15px;height:15px;"></td>
-                                            <td><input type="checkbox" style="width:15px;height:15px;"></td>
-                                            <td><input type="checkbox" style="width:15px;height:15px;"></td>
-                                            <td><input type="checkbox" style="width:15px;height:15px;"></td>
+                                          <tr v-for="(data ,index) in datas">
+                                            <td>{{data.name}}</td>
+                                            <td ><input type="checkbox" v-model="data.Agent" v-on:change='itemcheck(index)'></td>
+                                            <td ><input type="checkbox" v-model="data.UH" v-on:change='itemcheck(index)'></td>
+                                            <td ><input type="checkbox" v-model="data.OM" v-on:change='itemcheck(index)'></td>
+                                            <td ><input type="checkbox" v-model="data.SD" v-on:change='itemcheck(index)'></td>
+                                            <td ><input type="checkbox" v-model="data.PC" v-on:change='itemcheck(index)'></td>
+                                            <td ><input type="checkbox" v-model="data.PS" v-on:change='itemcheck(index)'></td>
+                                            <td><input type="checkbox" v-model="data.All" v-on:change='checkedAll(index)'></td>
                                           </tr>
                                       </table>
-                                  
+                                      
                                 </div>
                                  
 
@@ -121,7 +55,8 @@
 
                              
        
-                          </div>
+                          </div> <!--permission結束  -->
+                         
                           <div class="tab-pane fade" id="pills-profile2" role="tabpanel">
                               <div class="pills-home2" id="searchArea">
                                 <div class="search">
@@ -133,23 +68,22 @@
                                       <button type="button" class="btn btn-primary">新增</button>
                                     </div>
                                 </div>
-                                <div class="srchContext">
-                                  <el-card class="box-card" v-for="(card,index) in cards">
+                                <div class="srchContext" >
+                                  <div v-on:dragover='dragover' v-on:drop='dragdrop(index)' v-for="(card,index) in cards"> 
+                                  <el-card :id="index" class="box-card"   draggable="true" v-on:dragstart='dragstart(index)' v-on:dragend='dragend'>
                                       <div slot="header" class="clearfix">
-                                        <el-checkbox :type="card.checked">{{card.name}}</el-checkbox>
+                                        <el-checkbox v-model="card.checked">{{card.name}}</el-checkbox>
                                       </div>
                                       <div class="text-item">
-                                        <span>名稱提示:</span>
-                                        <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">{{card.value}}
+                                        <span>名稱提示:{{card.value}}</span>
+                                        <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" v-model="card.value">
                                         <div class="cardBtn">
-                                          <button type="button" class="btn btn-secondary">修改</button>
-                                          <button type="button" class="btn btn-success">確定</button>
+                                          <button type="button" class="btn btn-secondary" v-on="modify()">修改</button>
+                                          <button type="button" class="btn btn-success" v-on="confirm">確定</button>
                                         </div>
                                       </div>
                                   </el-card>
-
-                                  
-                              
+                                  </div>
                                 </div>
                                 <div class="btn">
                                   <button type="button" class="btn btn-success">儲存</button>
@@ -157,7 +91,7 @@
                                 </div>
                               </div>
                                 
-                          </div>
+                          </div><!--CustomerSet結束  -->
                         </div>
 
                           
@@ -167,8 +101,11 @@
 </template>
 
 <script>
+
 export default{
+    
     data() {
+     
       return {
         cards:[
         {name:"Phone", checked: true, value:""},
@@ -177,18 +114,96 @@ export default{
         {name:"Email", checked: true, value:""},
         {name:"MemberID",checked: true, value:""}
         ],
-        //cards:["CustomerID","CustomerName","Email","MemberID"],
-
-        checked: true,
+        
+        datas:[
+        {name:"MyActivity", Agent: false, UH: false,OM: false,
+          SD: false, PC: false,PS: false, All: false},
+        {name:"Customer_Info", Agent: false, UH: false,OM: false,
+          SD: false, PC: false,PS: false, All: false},
+        {name:"History", Agent: false, UH: false,OM: false,
+          SD: false, PC: false,PS: false, All: false},
+        {name:"Ticket", Agent: false, UH: false,OM: false,
+          SD: false, PC: false,PS: false, All: false},
+        {name:"RC", Agent: false, UH: false,OM: false,
+          SD: false, PC: false,PS: false, All: false},
+        {name:"Termcode", Agent: false, UH: false,OM: false,
+          SD: false, PC: false,PS: false, All: false},
+        {name:"Contact", Agent: false, UH: false,OM: false,
+          SD: false, PC: false,PS: false, All: false},
+        ],
+        ckecked:false,
+        listItem: [],
+        card:0,
         
       }
     },
     
        
     methods: {
-     
+         dragstart(index){
+           this.card=index;
+           //console.log(index);
+         },
+         dragend(e){
+           //console.log(2);
+         },
+         dragover(e){
+           e.preventDefault();
+           console.log('over');
+         },
+         dragdrop(index){
+           //e.preventDefault();
+           //index.push(this.card);
+           if(this.card>index){
+          this.cards.splice(index,0,this.cards[this.card]);
+           this.cards.splice(this.card+1,1);
+           }
+           else{
+           this.cards.splice(index+1,0,this.cards[this.card]);
+           this.cards.splice(this.card,1);
+           }
+           console.log(this.card);//抓取的資料
+           console.log(index);//被換位子的資料
+           
+         },
+         checkedAll(index){
+           
+           if(this.datas[index].All){
+             this.datas[index].Agent = true;
+             this.datas[index].UH = true;
+             this.datas[index].OM = true;
+             this.datas[index].SD = true;
+             this.datas[index].PC = true;
+             this.datas[index].PS = true;
+             console.log(22);
+           }
+             
+         },
+         itemcheck(index){
+           console.log(22);
+           let name=['Agent', 'UH','OM','SD', 'PC','PS'];
+           let sum = 0;
+           for(let i = 0; i<name.length; i++){
+             if(this.datas[index][name[i]] == true){
+               sum++;
+               
+             }
+             
+           }
+           if(sum===6){
+             this.datas[index].All = true;
+           }else{
+             this.datas[index].All = false;
+           }
+         },
+         modify(){
+           let p ='';
+           this.cards.value = p;
+         }
+         
     },
 
 } 
+
 </script>
 
