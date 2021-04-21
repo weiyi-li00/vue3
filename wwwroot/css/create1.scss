@@ -200,11 +200,11 @@ span.el-checkbox__label{
 .el-menu{
   overflow: hidden;
 }
-.el-menu > .el-menu-item {
+.el-menu > .el-menu-item ,.trush{
   text-decoration: none;
     &:hover{
-      transform: scale3d(1.12,1.12,1);
-      transition: all .4s;
+      transform: scale3d(1.2,1.12,1);
+      transition: all .3s;
     }
 }
 .btn-primary{

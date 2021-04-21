@@ -162,7 +162,7 @@
   
                             </div>
                           </div>
-                      </div>
+                      </div><!--頁簽1-->
                       <div class="tab-pane fade" id="pills-profile" role="tabpanel">
                         <div class="pills-content">
                           <div class="pillsGroup" id="time">
@@ -202,7 +202,7 @@
                           <button type="button" class="btn btn-success" id="btn-success">儲存</button>
   
                         </div>  
-                      </div>
+                      </div><!--頁簽2-->
                       <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
                         <div class="pills-home2" id="searchArea">
                             <div class="search">
@@ -224,48 +224,28 @@
                               </div>
                               <div class="itemGroup">
                                 <p>名稱</p>
-                                <el-input placeholder="請輸入内容"></el-input>
+                                <el-input placeholder="請輸入内容" v-model.trim="searchFilter"></el-input>
                               </div>
                               <div class="itemButton">
                                 <button type="button" class="btn btn-primary"><img src="img/icons8-search-64.png" alt="" class="iconS">搜尋</button>
                               </div>
                             </div>
                             <div class="srchContext">
-                              <div class="card" style="width: 18rem;">
-                                <img src="#" class="card-img-top" alt="logo">
+                              
+                              <div class="card" style="width: 18rem;" v-for="(prj,index) in projects">
+                                <img :src="prj.img" class="card-img-top" alt="logo">
                                 <div class="card-body">
-                                  <p class="card-text">專案名稱</p>
-                                  <span class="ot">上線</span>
+                                  <p class="card-text">{{prj.name}}</p>
+                                  <span class="ot">{{prj.status}}</span>
                                 
                                 </div>
                               </div>
-                              <div class="card" style="width: 18rem;">
-                                <img src="#" class="card-img-top" alt="logo">
-                                <div class="card-body">
-                                  <p class="card-text">專案名稱</p>
-                                  <span class="ot">上線</span>
-
-                                </div>
-                              </div>
-                              <div class="card" style="width: 18rem;">
-                                <img src="" class="card-img-top" alt="logo">
-                                <div class="card-body">
-                                  <p class="card-text">專案名稱</p>  
-                                  <span class="st">下線</span>                              
-                                </div>
-                              </div>
-                              <div class="card" style="width: 18rem;">
-                                <img src="#" class="card-img-top" alt="logo">
-                                <div class="card-body">
-                                  <p class="card-text">專案名稱</p> 
-                                  <span class="st">下線</span>                               
-                                </div>
-                              </div>
+                              
                               
                               
                             </div>
                         </div>
-                      </div>
+                      </div><!--頁簽3-->
                      </div>
     </div>
 </template>
@@ -286,9 +266,18 @@ export default {
       
       let GroupID = ref(["Viantest(9993)", "skill(61)","udn_TW(93)"]);
       let staff = ["Scott","Scott","Scott"];
-      // let pickerOptions = (time) => { time.new Date()};
       let status= ["上線","下線"];
       let type = ["IB", "OB"];
+      let searchFilter = '';
+      let projects = [
+        {name:'volvo', img:'#', status:'上線'},
+        {name:'CW_OB', img:'#', status:'下線'},
+        {name:'ECOVACS_HK', img:'#', status:'上線'},
+        {name:'DST', img:'#', status:'下線'},
+        {name:'HERE-TW', img:'#', status:'上線'},
+        {name:'iAPOTel', img:'#', status:'下線'},
+        {name:'KFC', img:'#', status:'下線'},
+        {name:'Nespresso_CN', img:'#', status:'上線'}];
       
       return {
         value1,
@@ -301,10 +290,15 @@ export default {
         GroupID,
         staff,
         status,
-        type
-        //pickerOptions
+        type,
+        searchFilter,
+        projects
       }
       
     },
+    methods: {
+      
+    },
 }
+console.log(23163)
 </script>
