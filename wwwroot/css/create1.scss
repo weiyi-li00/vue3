@@ -247,6 +247,10 @@ span.st{
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  .card-body,.card{
+    width: 18rem; 
+    margin-bottom:25px;
+  }
 }
 .srchContext{
   margin-top: 50px;

@@ -232,8 +232,8 @@
                             </div>
                             <div class="srchContext">
                               
-                              <div class="card" style="width: 18rem;" v-for="(prj,index) in projects">
-                                <img :src="prj.img" class="card-img-top" alt="logo">
+                              <div class="card"  v-for="(prj,index) in projects">
+                                <img v-bind:src="prj.img" class="card-img-top" alt="logo">
                                 <div class="card-body">
                                   <p class="card-text">{{prj.name}}</p>
                                   <span class="ot">{{prj.status}}</span>
@@ -259,10 +259,8 @@ export default {
       let value4 = ref(true);//啟用專案
       let date1 = ref(true);
       let date2 = ref(true);
-      let Application =ref([
-        'Abbott(53)','Brands(30004)',
-        'CW(33)','Huawei_HK(20)',
-        'Nexstgo(9993)','PG_CN(30)','Y100(12)']) ;
+      let Application =ref(['Abbott(53)','Brands(30004)',
+        'CW(33)','Huawei_HK(20)','Nexstgo(9993)','PG_CN(30)','Y100(12)']);
       
       let GroupID = ref(["Viantest(9993)", "skill(61)","udn_TW(93)"]);
       let staff = ["Scott","Scott","Scott"];
@@ -270,14 +268,15 @@ export default {
       let type = ["IB", "OB"];
       let searchFilter = '';
       let projects = [
-        {name:'volvo', img:'#', status:'上線'},
-        {name:'CW_OB', img:'#', status:'下線'},
-        {name:'ECOVACS_HK', img:'#', status:'上線'},
-        {name:'DST', img:'#', status:'下線'},
-        {name:'HERE-TW', img:'#', status:'上線'},
-        {name:'iAPOTel', img:'#', status:'下線'},
-        {name:'KFC', img:'#', status:'下線'},
-        {name:'Nespresso_CN', img:'#', status:'上線'}];
+        {name:'volvo'       , img:'#', status:'上線'},
+        {name:'CW_OB'       , img:'#', status:'下線'},
+        {name:'ECOVACS_HK'  , img:'#', status:'上線'},
+        {name:'DST'         , img:'#', status:'下線'},
+        {name:'HERE-TW'     , img:'#', status:'上線'},
+        {name:'iAPOTel'     , img:'#', status:'下線'},
+        {name:'KFC'         , img:'#', status:'下線'},
+        {name:'Nespresso_CN', img:'#', status:'上線'}
+        ];
       
       return {
         value1,
@@ -300,5 +299,5 @@ export default {
       
     },
 }
-console.log(23163)
+
 </script>

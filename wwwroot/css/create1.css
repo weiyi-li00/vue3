@@ -315,6 +315,11 @@ span.st {
           justify-content: space-between;
 }
 
+.srchContext .card-body, .srchContext .card, .card-body .card-body, .card-body .card {
+  width: 18rem;
+  margin-bottom: 25px;
+}
+
 .srchContext {
   margin-top: 50px;
 }
