@@ -33,14 +33,14 @@
               
 
               <el-drawer v-model="drawer">
-                <el-input placeholder="搜尋" prefix-icon="el-icon-search"></el-input>
+                <el-input placeholder="搜尋" prefix-icon="el-icon-search" v-model.trim="drawerfilter"></el-input>
                 <el-table :data="tableData" :row-class-name="tableRowClassName">
                   <el-table-column width="90px">
                     <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
                   </el-table-column>
                   <el-table-column prop="site" label="Site" width="110px"></el-table-column>
                   <el-table-column prop="systype" label="SysType" width="110px"></el-table-column>
-                  <el-table-column prop="name" label="服務" width="200px"></el-table-column>
+                  <el-table-column prop="service" label="服務" width="200px"></el-table-column>
                   
                 </el-table>
                 <button type="button" class="btn btn-primary" style="width: 63px; float: right; margin-top:20px">確定</button>
@@ -55,57 +55,52 @@
               <el-table :data="tableData" :row-class-name="tableRowClassName" style="width:85%; margin:0 auto;">
                 <el-table-column prop="site" label="Site" width="200px"></el-table-column>
                 <el-table-column prop="systype" label="SysType" width="200px"></el-table-column>
-                <el-table-column prop="name" label="服務" width="300px"></el-table-column>
+                <el-table-column prop="service" label="服務" width="300px"></el-table-column>
                 <el-table-column label="顯示名稱" width="300px"><input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm"></el-table-column>
-                <el-table-column label="" width="150px"><img src="vue\img\dustbin.png" alt="" style="width: 20px"></el-table-column>
+                <el-table-column width="150px"><img src="vue\img\dustbin.png" alt="" style="width: 20px" class="trush" v-on:click="DEL(index,'nobar')"></el-table-column>
               </el-table>
         </div>
         <div class="btn">
               <button type="button" class="btn btn-success">儲存</button>
   
         </div>
-      </div>
+      </div><!--nobar頁籤結束-->
 
       <div class="tab-pane fade" id="pills-profile3" role="tabpanel" aria-labelledby="pills-profile-tab3">
         <div class="pills-home2" style="flex-direction: column;">
           <div class="search">
-            <div class="itemGroup" style="align-self: flex-end;margin: 15px 30px">
-              <select class="form-select" id="inputGroupSelect01">
-                <option selected v-for="(f,index) in filed">
-                  {{ filed[index] }}
-                </option>
-              </select>
-            </div>
-            <div class="itemGroup2" style="align-self: flex-end;">
-               <el-input placeholder="搜尋" prefix-icon="el-icon-search"></el-input>
+            <div class="itemGroup2" style="align-self: flex-end;">   
+               <span>搜尋</span>                                  
+               <el-input placeholder="搜尋" prefix-icon="el-icon-search" v-model.trim="teamcodeFilter" style="margin-top: 5px;"></el-input>
             </div>
             <div class="itemGroup2">
                 <span>新增資料夾</span>
-                <el-input placeholder="請輸入内容" style="margin-top: 5px;"></el-input>
+                <el-input placeholder="Enter輸入" style="margin-top: 5px;" v-model.trim="addfile" v-on:keyup.enter="add(addfile)"></el-input>
             </div>
             <div class="itemGroup2" style="align-self: flex-end;">
-                <button type="button" class="btn btn-primary" style="justify-content: center;">新增</button>
+                <!-- <button type="button" class="btn btn-primary" style="justify-content: center;" v-on:click="add(addfile)">新增</button> -->
             </div>
           </div>
             <div class="srchContext">
                 <el-card class="box-card" v-for="(f,index) in filed">
                     <div slot="header" class="clearfix" style="display: flex;height: 38px;">
-                          <span>{{filed[index]}}</span>
+                      <input type="text" v-model="f.name" v-if="f.editDisplay" v-on:keyup.enter='f.editDisplay = false'>
+                      <span style="cursor: pointer" v-on:click="edit(index)" v-else="f.editDisplay">{{f.name}}</span>
                           <img src="vue\img\add.png" alt="" style="width:25px; height:25px;cursor: pointer;" @click="drawer2 = true" type="primary">
                     </div>
                     <div class="text-item">
                       <table>
                         <tr style="cursor: move;">
                           <td style="width: 210px; padding: 10px;">一般諮詢</td>
-                          <td style="padding:15px 10px;"><img src="vue\img\dustbin.png" alt="" style="width:17px;cursor: pointer;"></td>
+                          <td style="padding:15px 10px;"><img src="vue\img\dustbin.png" alt="" style="width:17px;cursor: pointer;" class="trush"></td>
                         </tr>
                         <tr style="cursor: move;">
                           <td style="width: 210px;padding: 10px;">一般諮詢</td>
-                          <td style="padding: 15px 10px;"><img src="vue\img\dustbin.png" alt="" style="width:17px;cursor: pointer;"></td>
+                          <td style="padding: 15px 10px;"><img src="vue\img\dustbin.png" alt="" style="width:17px;cursor: pointer;" class="trush"></td>
                         </tr>
                       </table>
                       <div class="cardBtn" style="margin-top:20px">
-                        <button type="button" class="btn btn-danger">移除</button>
+                        <button type="button" class="btn btn-danger" v-on:click="DEL(index,'file')">移除</button>
                         
                       </div>
                     </div>
@@ -136,19 +131,23 @@
   
             </div>
           </div>
-        </div>
-      </div>
+      </div><!--teamcode頁籤結束-->
+      </div><!--content結束-->
 
-    </div><!--整個main結束點-->
+    
   </div>
 </template>
 <script>
 export default {
   data() {
     return {
-      drawer2: false,
+      addfile:'',
       direction2: 'btt',
       drawer: false,
+      drawer2: false,
+      teamcodeFilter:'',
+      drawerfilter:'',
+      //editDisplay:false,
       DB: ["w08DBRD01", "w08DB001", "G5"],
       tableData: [
         {
@@ -156,36 +155,42 @@ export default {
           site: "1",
           systype: "3",
           service: "Viantest_RD (1236)",
+          value:""
         },
         {
           name: "CustomerID",
           site: "1",
           systype: "3",
           service: "AgentGreeting (155)",
+          value:""
         },
         {
           name: "CustomerName",
           site: "1",
           systype: "3",
           service: "Brands_A1 (344)",
+          value:""
         },
         {
           name: "Email",
           site: "1",
           systype: "3",
           service: "Ecovacs_AU_RC (772)",
-        },
+          value:""
+        }
       ],
-      filed:['有效','無效',	'其他',	'查詢','接通','未接通','拒絕','回撥'],
-      cards:[
-        {name:"Phone", checked: true, value:""},
-        {name:"CustomerID", checked: true, value:""},
-        {name:"CustomerName", checked: true, value:""},
-        {name:"Email", checked: true, value:""},
-        {name:"MemberID",checked: true, value:""}
+      filed:[
+              {name:'有效'  ,editDisplay:false},
+              {name:'無效'  ,editDisplay:false},
+              {name:'其他'  ,editDisplay:false},
+              {name:'查詢'  ,editDisplay:false},
+              {name:'接通'  ,editDisplay:false},
+              {name:'未接通',editDisplay:false},
+              {name:'拒絕'  ,editDisplay:false},
+              {name:'回撥'  ,editDisplay:false}
       ],
-
-    };
+    
+    }
   },
   methods: {
     tableRowClassName({ row, rowIndex }) {
@@ -196,7 +201,35 @@ export default {
       }
       return "";
     },
-  },
-};
-</script>
+    
+    add(e){
+      let addItem = {name: this.addfile ,editDisplay:false}
+      this.filed.unshift(addItem);
+    },
 
+    DEL(index,nobar){
+      nobar ==='file' ? this.filed.splice(index,1) : this.tableData.splice(index,1);
+    },
+    edit(e){
+      this.filed[e].editDisplay ? this.filed[e].editDisplay = false : this.filed[e].editDisplay = true;
+      //外面傳index，近來裡面用
+    }
+  
+  },
+  computed:{
+      filed(){
+         return this.filed.filter((item, index) =>{
+            return item.name.includes(this.teamcodeFilter)
+        
+       });
+    },
+     tableData(){
+        return this.tableData.filter((item, index) => {
+            return item.service.includes(this.drawerfilter)
+            
+       });
+     },
+     
+  }
+}
+</script>

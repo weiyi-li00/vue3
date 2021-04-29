@@ -19,11 +19,11 @@
 
                               <div class="itemGroup">
                                 <span><span class="mak">*</span>專案名稱</span><br>
-                                <el-input placeholder="請輸入内容"></el-input>
+                                <el-input placeholder="請輸入内容" v-model='projtName'></el-input>
                               </div>
                               <div class="itemGroup">
                                 <span><span class="mak">*</span>專案代碼</span><br>
-                                <el-input placeholder="請輸入内容"></el-input>
+                                <el-input placeholder="請輸入内容" v-model='projtNum'></el-input>
                               </div>
                               <div class="itemGroup">
                                 <span><span class="mak">*</span>Application_id</span><br>
@@ -45,7 +45,7 @@
                               </div>
                               <div class="itemGroup">
                                 <span><span class="mak">*</span>HTML資料夾名稱</span><br>
-                                <el-input placeholder="請輸入内容"></el-input>
+                                <el-input placeholder="請輸入内容" v-model='htmlName'></el-input>
                               </div>
                               <div class="itemGroup">
                                 <span><span class="mak">*</span>通知人員</span><br>
@@ -117,7 +117,7 @@
                                 </div>
                                 <div class="ocArea">
                                   <span>名稱:</span>
-                                  <el-input placeholder="請輸入内容"></el-input>
+                                  <el-input placeholder="請輸入内容" v-model='QOC'></el-input>
                                 </div>
                               </div>
                               <div class="itemGroup">
@@ -128,7 +128,7 @@
                                 </div>
                                 <div class="ocArea">
                                   <span>名稱:</span>
-                                  <el-input placeholder="請輸入内容"></el-input>
+                                  <el-input placeholder="請輸入内容" v-model='AOC'></el-input>
                                 </div>
                               </div>
                             </div> 
@@ -136,7 +136,7 @@
                               <div class="itemGroup">
                                 <span>文字大小</span>
                                 <div class="ocArea">
-                                  <el-input placeholder="請輸入内容"></el-input>
+                                  <el-input placeholder="數字" type="number" min="13"></el-input>
                                   <small>系統預設 : 13px</small>
 
                                 </div>
@@ -144,7 +144,7 @@
                               <div class="itemGroup">
                                 <span>字型</span>
                                 <div class="ocArea">
-                                  <el-input placeholder="請輸入内容"></el-input>
+                                  <el-input placeholder="請輸入内容" v-model="textType"></el-input>
 
                                   <small>微軟正黑體/新宋體</small>
                                 </div>
@@ -162,7 +162,7 @@
   
                             </div>
                           </div>
-                      </div>
+                      </div><!--頁簽1-->
                       <div class="tab-pane fade" id="pills-profile" role="tabpanel">
                         <div class="pills-content">
                           <div class="pillsGroup" id="time">
@@ -202,109 +202,121 @@
                           <button type="button" class="btn btn-success" id="btn-success">儲存</button>
   
                         </div>  
-                      </div>
+                      </div><!--頁簽2-->
                       <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
                         <div class="pills-home2" id="searchArea">
                             <div class="search">
                               <div class="itemGroup">
                                 <p>狀態</p>
-                                <select class="form-select" id="inputGroupSelect01">
-                                        <option selected v-for=" (t,index) in  status">
+                                <select class="form-select" id="inputGroupSelect01" v-model="option2">
+                                        <option  v-for=" (t,index) in  status">
                                           {{status[index]}}
                                         </option>
                                 </select>
                               </div>
                               <div class="itemGroup">
                                 <p>類型</p>
-                                <select class="form-select" id="inputGroupSelect01">
-                                        <option selected v-for=" (p,index) in type">
+                                <select class="form-select" id="inputGroupSelect01" v-model="option">
+                                        <option  v-for=" (p,index) in type">
                                           {{type[index]}}
                                         </option>
                                 </select>
                               </div>
                               <div class="itemGroup">
                                 <p>名稱</p>
-                                <el-input placeholder="請輸入内容"></el-input>
+                                <el-input placeholder="請輸入内容" v-model.trim="searchFilter" type="text"></el-input>
                               </div>
                               <div class="itemButton">
-                                <button type="button" class="btn btn-primary"><img src="img/icons8-search-64.png" alt="" class="iconS">搜尋</button>
-                              </div>
+                                <button type="button" class="btn btn-primary" v-on:click='srchPrjt(option,option2)'>搜尋</button>
+                              </div>                                          
                             </div>
                             <div class="srchContext">
-                              <div class="card" style="width: 18rem;">
-                                <img src="#" class="card-img-top" alt="logo">
+                              <div class="card"  v-for="(prj,index) in projects">
+                                <img v-bind:src="prj.img" class="card-img-top" alt="logo">
+                                  <p class="card-text">{{prj.name}}</p>
                                 <div class="card-body">
-                                  <p class="card-text">專案名稱</p>
-                                  <span class="ot">上線</span>
-                                
+                                  <span class="ot">{{prj.status}}</span>
+                                  <span class="ot">{{prj.type}}</span>
                                 </div>
-                              </div>
-                              <div class="card" style="width: 18rem;">
-                                <img src="#" class="card-img-top" alt="logo">
-                                <div class="card-body">
-                                  <p class="card-text">專案名稱</p>
-                                  <span class="ot">上線</span>
-
-                                </div>
-                              </div>
-                              <div class="card" style="width: 18rem;">
-                                <img src="" class="card-img-top" alt="logo">
-                                <div class="card-body">
-                                  <p class="card-text">專案名稱</p>  
-                                  <span class="st">下線</span>                              
-                                </div>
-                              </div>
-                              <div class="card" style="width: 18rem;">
-                                <img src="#" class="card-img-top" alt="logo">
-                                <div class="card-body">
-                                  <p class="card-text">專案名稱</p> 
-                                  <span class="st">下線</span>                               
-                                </div>
-                              </div>
-                              
-                              
+                              </div>  
                             </div>
                         </div>
-                      </div>
+                      </div><!--頁簽3-->
                      </div>
     </div>
 </template>
 
 <script>
 export default {
-  setup() {
-      let value1 = ref(true);
-      let value2 = ref(true);
-      let value3 = ref(true);
-      let value4 = ref(true);//啟用專案
-      let date1 = ref(true);
-      let date2 = ref(true);
-      let Application =ref([
-        'Abbott(53)','Brands(30004)',
-        'CW(33)','Huawei_HK(20)',
-        'Nexstgo(9993)','PG_CN(30)','Y100(12)']) ;
+  data() {
+    return{
+      option2:'',
+      option:'',
+      textType:'',
+      QOC:'',
+      AOC:'',
+      projtName:'',
+      projtNum:'',
+      htmlName:'',
+       value1 : true,
+       value2 : true,
+       value3 : true,
+       value4 : true,//啟用專案
+       date1 :  true,
+       date2 :  true,
+       Application :['Abbott(53)','Brands(30004)',
+        'CW(33)','Huawei_HK(20)','Nexstgo(9993)','PG_CN(30)','Y100(12)'],
       
-      let GroupID = ref(["Viantest(9993)", "skill(61)","udn_TW(93)"]);
-      let staff = ["Scott","Scott","Scott"];
-      // let pickerOptions = (time) => { time.new Date()};
-      let status= ["上線","下線"];
-      let type = ["IB", "OB"];
+      GroupID:["Viantest(9993)", "skill(61)","udn_TW(93)"],
+      staff : ["Scott","Scott","Scott"],
+      status: { all:"" ,on:"上線", down:"下線"},
+      type : ["","IB", "OB"],
+      searchFilter : '',
+      projects : [
+        {name:'volvo'       , img:'#', status:'上線' ,type:'IB'},
+        {name:'CW_OB'       , img:'#', status:'下線' ,type:'OB'},
+        {name:'ECOVACS_HK'  , img:'#', status:'上線' ,type:'OB'},
+        {name:'DST'         , img:'#', status:'下線' ,type:'OB'},
+        {name:'HERE-TW'     , img:'#', status:'上線' ,type:'IB'},
+        {name:'iAPOTel'     , img:'#', status:'下線' ,type:'IB'},
+        {name:'KFC'         , img:'#', status:'下線' ,type:'IB'},
+        {name:'Nespresso_CN', img:'#', status:'上線' ,type:'OB'}
+        ],
+
+        projects1 : [
+        {name:'volvo'       , img:'#', status:'上線' ,type:'IB'},
+        {name:'CW_OB'       , img:'#', status:'下線' ,type:'OB'},
+        {name:'ECOVACS_HK'  , img:'#', status:'上線' ,type:'OB'},
+        {name:'DST'         , img:'#', status:'下線' ,type:'OB'},
+        {name:'HERE-TW'     , img:'#', status:'上線' ,type:'IB'},
+        {name:'iAPOTel'     , img:'#', status:'下線' ,type:'IB'},
+        {name:'KFC'         , img:'#', status:'下線' ,type:'IB'},
+        {name:'Nespresso_CN', img:'#', status:'上線' ,type:'OB'}
+        ]
+    }  
       
-      return {
-        value1,
-        value2,
-        value3,
-        value4,
-        date1,
-        date2,
-        Application,
-        GroupID,
-        staff,
-        status,
-        type
-        //pickerOptions
+  },
+   
+    methods: {
+      srchPrjt(i,o){
+        console.log(526+56)
+        this.projects = this.projects1.filter((item, index) => {
+            return (item.type === i || i === '')  &&  (item.status === o || o === '') 
+            
+           
+      });
       }
-      
     },
+      computed:{
+      projects(){
+        return this.projects.filter((item, index) => {
+          return item.name.toLowerCase().includes(this.searchFilter.toLowerCase())
+        });
+      },
+      
+
+      
+    }
 }
+
 </script>

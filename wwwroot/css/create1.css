@@ -234,15 +234,15 @@ span.el-checkbox__label {
   overflow: hidden;
 }
 
-.el-menu > .el-menu-item {
+.el-menu > .el-menu-item, .trush {
   text-decoration: none;
 }
 
-.el-menu > .el-menu-item:hover {
-  -webkit-transform: scale3d(1.12, 1.12, 1);
-          transform: scale3d(1.12, 1.12, 1);
-  -webkit-transition: all .4s;
-  transition: all .4s;
+.el-menu > .el-menu-item:hover, .trush:hover {
+  -webkit-transform: scale3d(1.2, 1.12, 1);
+          transform: scale3d(1.2, 1.12, 1);
+  -webkit-transition: all .3s;
+  transition: all .3s;
 }
 
 .btn-primary {
@@ -313,6 +313,11 @@ span.st {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+}
+
+.srchContext .card-body, .srchContext .card, .card-body .card-body, .card-body .card {
+  width: 18rem;
+  margin-bottom: 25px;
 }
 
 .srchContext {
